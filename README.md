@@ -1,2 +1,39 @@
-# ayofahm.github.io
-testing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> I love you </title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <video id="loopingVideo" controls autoplay loop muted>
+        <source src="./video.mp4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('loopingVideo');
+            
+            video.addEventListener('ended', function () {
+                // Reset the video to the beginning and play it again
+                video.currentTime = 0;
+                video.play();
+            });
+        });
+    </script>
+</body>
+</html>
